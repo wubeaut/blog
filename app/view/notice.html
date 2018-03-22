@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="{$sec};url={$url}">
+	<style type="text/css">
+		div{
+
+			width:300px;
+			height: 200px;
+			margin:200px auto;
+			background: #4ef59c;
+			border-radius: 10px;
+		}
+		.content{
+
+			font-size: 20px;
+			color: black;
+			text-align: center;
+		}
+		.sec{
+			font-size: 25px;
+			color: black;
+			text-align: center;
+		}
+	</style>
+	<script>
+		window.onload = function()
+		{
+			var n = {$sec};
+			var time = document.getElementById('sec');
+			
+			setInterval(function(){
+				n--;
+				
+				sec.innerHTML = n+ '秒后跳转';
+				
+				if (n == 0) {
+					window.location.href = '{$url}';
+				}
+			},1000);
+			
+		}
+		</script>
+</head>
+<body>
+	<div>
+	 	<p class="content">{$msg}</p>
+	 	<p id="sec" class="sec">{$sec}秒后返回</p>
+	</div>
+</body>
+</html>
